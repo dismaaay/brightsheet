@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.classList.add("js");</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Brightsheet — templates &amp; planners that do the work for you</title>
+<meta name="description" content="Spreadsheets that do the math and printable planners that keep you on track. Instant download, works in Excel & Google Sheets, yours forever." />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Brightsheet — templates & planners that do the work for you" />
+<meta property="og:description" content="Budget, freelancer P&L, debt payoff, small-business cashflow, ADHD planner, care tracker. Instant download. Works in Excel & Google Sheets." />
+<meta property="og:url" content="https://dismaaay.github.io/brightsheet/" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --paper: #FBF7EF;
+    --card: #FFFFFF;
+    --ink: #1C1B17;
+    --muted: #6E6757;
+    --line: #E9E1D3;
+    --green: #0E7C5E;
+    --green-deep: #0A5C45;
+    --amber: #E9A23B;
+    --display: "Bricolage Grotesque", system-ui, sans-serif;
+    --body: "Inter", system-ui, sans-serif;
+    --maxw: 1120px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--paper); color: var(--ink); font-family: var(--body); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  ::selection { background: var(--green); color: #fff; }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+  a { color: inherit; }
+
+  header.nav { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; }
+  .brand { font-family: var(--display); font-weight: 800; font-size: 1.3rem; letter-spacing: -0.02em; display: flex; align-items: center; gap: 9px; }
+  .brand .mark { width: 22px; height: 22px; border-radius: 6px; background: var(--green); display: inline-block; position: relative; }
+  .brand .mark::after { content: ""; position: absolute; inset: 6px 6px auto 6px; height: 3px; background: #fff; box-shadow: 0 5px 0 #fff, 0 10px 0 rgba(255,255,255,.6); }
+  .nav .links a { text-decoration: none; color: var(--muted); margin-left: 22px; font-size: 0.95rem; font-weight: 500; }
+  .nav .links a:hover { color: var(--ink); }
+  @media (max-width: 620px){ .nav .links { display: none; } }
+
+  /* hero */
+  .hero { padding: 48px 0 26px; max-width: 760px; }
+  .eyebrow { font-weight: 600; color: var(--green); letter-spacing: 0.02em; font-size: 0.92rem; }
+  .hero h1 { font-family: var(--display); font-weight: 800; font-size: clamp(2.3rem, 6vw, 4rem); line-height: 1.03; letter-spacing: -0.03em; margin: 12px 0 0; }
+  .hero h1 em { font-style: normal; color: var(--green); }
+  .hero p { color: var(--muted); font-size: clamp(1.05rem, 1.7vw, 1.25rem); margin-top: 20px; max-width: 60ch; }
+  .trust { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 26px; font-size: 0.92rem; color: var(--muted); }
+  .trust span { display: inline-flex; align-items: center; gap: 8px; }
+  .trust .tick { width: 17px; height: 17px; border-radius: 50%; background: var(--green); color: #fff; display: inline-grid; place-items: center; font-size: 11px; font-weight: 700; }
+
+  /* category */
+  .cat { padding: 30px 0 8px; }
+  .cat-head { display: flex; align-items: baseline; gap: 14px; border-bottom: 2px solid var(--ink); padding-bottom: 12px; margin-bottom: 26px; }
+  .cat-head h2 { font-family: var(--display); font-weight: 700; font-size: 1.5rem; letter-spacing: -0.01em; }
+  .cat-head .note { color: var(--muted); font-size: 0.92rem; }
+
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  @media (max-width: 900px){ .grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 620px){ .grid { grid-template-columns: 1fr; } }
+
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px; display: flex; flex-direction: column; transition: transform .18s ease, box-shadow .18s ease; }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 18px 40px -22px rgba(28,27,23,.35); }
+  .card .tag { align-self: flex-start; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; padding: 4px 9px; border-radius: 999px; background: #F0EBDF; color: var(--muted); }
+  .card .tag.pl { background: #E7F3EE; color: var(--green-deep); }
+  .card h3 { font-family: var(--display); font-weight: 700; font-size: 1.2rem; letter-spacing: -0.01em; margin: 14px 0 6px; line-height: 1.15; }
+  .card .sub { color: var(--muted); font-size: 0.93rem; }
+  .card ul { list-style: none; margin: 14px 0 0; display: flex; flex-direction: column; gap: 8px; }
+  .card li { position: relative; padding-left: 22px; font-size: 0.9rem; color: #45413a; }
+  .card li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+  .card .buy { margin-top: 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 16px; border-top: 1px solid var(--line); }
+  .price { font-family: var(--display); font-weight: 800; font-size: 1.5rem; letter-spacing: -0.01em; }
+  .price small { font-family: var(--body); font-weight: 500; font-size: 0.8rem; color: var(--muted); display: block; line-height: 1; margin-top: 2px; }
+  .btn { background: var(--green); color: #fff; text-decoration: none; font-weight: 600; font-size: 0.95rem; padding: 12px 20px; border-radius: 10px; white-space: nowrap; transition: background .18s; }
+  .btn:hover { background: var(--green-deep); }
+
+  /* guarantee band */
+  .band { margin: 48px 0 10px; background: var(--ink); color: #F5F0E6; border-radius: 18px; padding: 34px 30px; display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+  @media (max-width: 760px){ .band { grid-template-columns: 1fr; } }
+  .band h4 { font-family: var(--display); font-weight: 700; font-size: 1.05rem; margin-bottom: 6px; color: #fff; }
+  .band p { color: #C9C1B0; font-size: 0.92rem; }
+
+  footer { margin-top: 44px; padding: 28px 0 60px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.88rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+
+  html.js .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+  html.js .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce){ *,*::before,*::after{ animation:none!important; transition:none!important; } html.js .reveal{ opacity:1; transform:none; } html{ scroll-behavior:auto; } }
+  :focus-visible { outline: 2px solid var(--green); outline-offset: 3px; border-radius: 6px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="nav">
+    <div class="brand"><span class="mark" aria-hidden="true"></span> Brightsheet</div>
+    <nav class="links" aria-label="Primary">
+      <a href="#spreadsheets">Spreadsheets</a>
+      <a href="#printables">Printables</a>
+      <a href="#guarantee">Why us</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="eyebrow">Digital templates &amp; planners</div>
+    <h1>Templates that <em>do the work</em> for you.</h1>
+    <p>Spreadsheets that do the math and printable planners that keep you on track. Pick one, download it instantly, use it forever — no subscription, no account.</p>
+    <div class="trust">
+      <span><span class="tick">↓</span> Instant download</span>
+      <span><span class="tick">✓</span> Works in Excel &amp; Google Sheets</span>
+      <span><span class="tick">∞</span> Buy once, yours forever</span>
+      <span><span class="tick">🔒</span> Secure checkout (Stripe)</span>
+    </div>
+  </section>
+
+  <!-- SPREADSHEETS -->
+  <section class="cat" id="spreadsheets">
+    <div class="cat-head"><h2>Spreadsheets that do the math</h2><span class="note">Real formulas. Open in Excel, Google Sheets or LibreOffice.</span></div>
+    <div class="grid">
+
+      <article class="card reveal">
+        <span class="tag pl">Po polsku · zł</span>
+        <h3>Budżet Domowy PRO</h3>
+        <p class="sub">Przejmij kontrolę nad domowym budżetem w 5 minut — gotowy arkusz w złotówkach.</p>
+        <ul>
+          <li>Automatyczny pulpit: przychody, wydatki, bilans, oszczędności + wykresy</li>
+          <li>Formuły SUMIFS na kategorię i miesiąc, sumy roczne</li>
+          <li>Działa w Excelu i Google Sheets — bez subskrypcji</li>
+        </ul>
+        <div class="buy">
+          <div class="price">€12<small>~52 zł</small></div>
+          <a class="btn" href="https://buy.stripe.com/14A3cwc358R63Hp0Ov1gs04">Kup teraz</a>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <span class="tag pl">Po polsku · zł</span>
+        <h3>Freelancer PL — P&amp;L + Faktury</h3>
+        <p class="sub">Pulpit finansowy dla JDG i działalności nierejestrowanej. Bez księgowej, bez abonamentu.</p>
+        <ul>
+          <li>Przychód, koszty, zysk i VAT należny liczone automatycznie</li>
+          <li>Rejestr faktur i kosztów ze statusami i kategoriami</li>
+          <li>12-miesięczny pulpit z wykresami</li>
+        </ul>
+        <div class="buy">
+          <div class="price">€15<small>~65 zł</small></div>
+          <a class="btn" href="https://buy.stripe.com/bJecN6ffh4AQcdV8gX1gs05">Kup teraz</a>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <span class="tag">English · $</span>
+        <h3>Debt Snowball &amp; Avalanche</h3>
+        <p class="sub">Pay off debt years faster — see your exact debt-free date in one click.</p>
+        <ul>
+          <li>Switch Snowball ↔ Avalanche in a single cell</li>
+          <li>Debt-free date + total interest saved, calculated live</li>
+          <li>120-month plan with real interest math + chart</li>
+        </ul>
+        <div class="buy">
+          <div class="price">€9<small>~39 zł</small></div>
+          <a class="btn" href="https://buy.stripe.com/5kQ00k6IL5EU4Lt0Ov1gs06">Buy now</a>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <span class="tag">English · $</span>
+        <h3>Small Business P&amp;L + Cashflow</h3>
+        <p class="sub">Know exactly what your business makes — and whether you'll have cash next month.</p>
+        <ul>
+          <li>KPI dashboard: revenue, gross/net profit, margin</li>
+          <li>12-month cashflow roll-forward — spot crunches early</li>
+          <li>Real SUMIFS formulas; works in Excel &amp; Sheets</li>
+        </ul>
+        <div class="buy">
+          <div class="price">€15<small>~65 zł</small></div>
+          <a class="btn" href="https://buy.stripe.com/9B66oI3wz2sI7XFgNt1gs09">Buy now</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- PRINTABLES -->
+  <section class="cat" id="printables">
+    <div class="cat-head"><h2>Printable planners</h2><span class="note">Instant-download A4 PDFs. Print as many times as you like.</span></div>
+    <div class="grid">
+
+      <article class="card reveal">
+        <span class="tag">English · A4 PDF</span>
+        <h3>ADHD Daily &amp; Weekly Planner</h3>
+        <p class="sub">A calm, high-contrast planner system built for ADHD brains.</p>
+        <ul>
+          <li>ADHD-friendly: one clear job per page, calm &amp; high-contrast</li>
+          <li>Time-blocked daily + weekly overview + 31-day habit tracker</li>
+          <li>Print-ready A4 PDF (6 pages) — reprint forever</li>
+        </ul>
+        <div class="buy">
+          <div class="price">€9<small>~39 zł</small></div>
+          <a class="btn" href="https://buy.stripe.com/3cI9AU0kn3wMgubgNt1gs07">Buy now</a>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <span class="tag pl">PL + EN · A4 PDF</span>
+        <h3>Medication &amp; Care Tracker</h3>
+        <p class="sub">Keep a loved one's medicines, care and appointments organized — bilingual.</p>
+        <ul>
+          <li>Polish + English on every line</li>
+          <li>Meds schedule, daily care log, appointments, emergency contacts</li>
+          <li>Large-print A4 PDF (5 pages) — print as needed</li>
+        </ul>
+        <div class="buy">
+          <div class="price">€7<small>~30 zł</small></div>
+          <a class="btn" href="https://buy.stripe.com/dRm7sM0kn9VacdV2WD1gs08">Buy now</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- GUARANTEE -->
+  <section class="band" id="guarantee">
+    <div>
+      <h4>It actually works</h4>
+      <p>Every spreadsheet ships with live formulas and example data, tested by recalculating the numbers. No broken cells, no "coming soon".</p>
+    </div>
+    <div>
+      <h4>Yours forever</h4>
+      <p>One-time price, instant download, no subscription. Use it on your computer or phone, print planners as many times as you want.</p>
+    </div>
+    <div>
+      <h4>Not happy? Refund.</h4>
+      <p>If a template doesn't work as described, reply to your receipt within 14 days and you'll get your money back. No risk.</p>
+    </div>
+  </section>
+
+  <footer>
+    <span>Brightsheet — digital templates &amp; planners</span>
+    <span>Secure checkout by Stripe · Delivered by email</span>
+  </footer>
+</div>
+<script>
+  (function(){ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}})},{threshold:0.12}); document.querySelectorAll(".reveal").forEach(function(el){io.observe(el);}); })();
+</script>
+</body>
+</html>
